@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <h3>How much do you know about constitution?</h3>
+        <p id="question_label"></p>
+        <button id="option_button_0" onclick="check_answer('A')"></button>
+        <button id="option_button_1" onclick="check_answer('B')"></button>
+        <button id="option_button_2" onclick="check_answer('C')"></button>
+        <button id="option_button_3" onclick="check_answer('D')"></button>
+        <p id="feedback_label"></p>
+        <button id="next_button" onclick="next_question()">Next</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
