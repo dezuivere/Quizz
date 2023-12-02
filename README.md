@@ -1,2 +1,2 @@
 # quizzz
-A simple quiz using HTML,CSS and JS.
+A simple quiz application using HTML,CSS and JS.
