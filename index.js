@@ -1,4 +1,4 @@
-//100 questions
+
 questions = [
     "What is Constitution?",
     "Who was the President of the constituent assembly?",
