@@ -210,39 +210,39 @@ options = [
 answers = ["B", "A", "B", "B", "B", "B", "A", "A", "C", "B", "C", "C", "C", "A", "C", "B", "C", "C", "C", "C", "C", "B", "B", "B", "C", "A", "C", "C", "A", "B", "B", "C", "C", "B", "C", "A", "B", "D", "B", "D","B", "D", "A", "A", "C", "C", "B", "A", "D", "D", "B", "C", "B", "A", "B", "A", "A", "D", "B", "C", "B", "B", "C", "B", "D", "C", "C", "B", "B", "A", "D", "B", "B", "D", "A", "B", "B", "D", "C", "D", "A", "B", "D", "B", "C", "D", "A", "C", "C", "D", "A", "A", "A", "D", "C", "A", "B", "B", "B", "D"]
 
 let score = 0;
-let question_num = 0;
+let questionNum = 0;
 
 function show_question() {
-    let question_number = question_num + 1;  // Add 1 to question_num to display question number starting from 1
-    let question_text = `${question_number}. ${questions[question_num]}`;
-    document.getElementById("question_label").innerText = question_text;
+    let questionNumber = questionNum + 1;  // Add 1 to questionNum to display question number starting from 1
+    let questionText = `${questionNumber}. ${questions[questionNum]}`;
+    document.getElementById("questionLabel").innerText = questionText;
     for (let i = 0; i < 4; i++) {
-        document.getElementById(`option_button_${i}`).innerText = options[question_num][i];
+        document.getElementById(`optionButton${i}`).innerText = options[questionNum][i];
     }
 }
 
 function check_answer(guess) {
-    if (guess === answers[question_num]) {
+    if (guess === answers[questionNum]) {
         score += 1;
-        document.getElementById("feedback_label").innerText = "Correct!";
+        document.getElementById("feedbackLabel").innerText = "Correct!";
     } else {
-        document.getElementById("feedback_label").innerText = `Wrong! The correct answer is: ${answers[question_num]}`;
+        document.getElementById("feedbackLabel").innerText = `Wrong! The correct answer is: ${answers[questionNum]}`;
     }
-    document.getElementById("next_button").disabled = false;
+    document.getElementById("nextButton").disabled = false;
     for (let i = 0; i < 4; i++) {
-        document.getElementById(`option_button_${i}`).disabled = true;
+        document.getElementById(`optionButton${i}`).disabled = true;
     }
 }
 
 function next_question() {
-    question_num += 1;
-    if (question_num < questions.length) {  
+    questionNum += 1;
+    if (questionNum < questions.length) {  
         show_question();
-        document.getElementById("feedback_label").innerText = "";
+        document.getElementById("feedbackLabel").innerText = "";
         for (let i = 0; i < 4; i++) {
-            document.getElementById(`option_button_${i}`).disabled = false;
+            document.getElementById(`optionButton${i}`).disabled = false;
         }
-        document.getElementById("next_button").disabled = true;
+        document.getElementById("nextButton").disabled = true;
     } else {
         show_result();
     }
